@@ -43,8 +43,15 @@ Route::delete('delete-route', function () {
     return;
 });
 
-Route::get('contact', function() {
+Route::get('contact', function () {
     return view('contact.index');
+});
+
+Route::get('about', function () {
+    $title = 'About Page';
+    $description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laudantium aspernatur repellat accusamus omnis, nihil laborum aut eius, libero dolores voluptate vero, facilis sunt tenetur';
+    $topics = ['Politics', 'Sports', 'Arts', 'Science'];
+    return view('about.index', ['title' => $title, 'description' => $description, 'topics' => $topics]);
 });
 
 Route::fallback(function () {

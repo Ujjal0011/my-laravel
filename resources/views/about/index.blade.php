@@ -9,10 +9,13 @@
 </head>
 
 <body>
-    <h1>About Page</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, in corporis repudiandae sit iste cupiditate
-        blanditiis necessitatibus quas odit. Sunt, iure eos laborum aut nihil reiciendis inventore consequatur nobis
-        maxime?</p>
+    <h1>{{ $title }}</h1>
+    <p>{{ $description }}</p>
+    <ul>
+        @foreach ($topics as $topic)
+            <li>{{ $topic }}</li>
+        @endforeach
+    </ul>
 </body>
 
 </html>
