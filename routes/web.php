@@ -27,6 +27,21 @@ Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
     })->name('show');
 });
 
+Route::get('get-route', function () {
+    return;
+});
+Route::post('post-route', function () {
+    return;
+});
+Route::put('put-route', function () {
+    return;
+});
+Route::patch('patch-route', function () {
+    return;
+});
+Route::delete('delete-route', function () {
+    return;
+});
 
 // breeze
 Route::middleware('auth')->group(function () {
