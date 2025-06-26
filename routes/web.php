@@ -15,6 +15,18 @@ Route::get('/user/{id}/{slug}', function ($id, $slug) {
     return 'Hello User: ' . $id . '; Slug: ' . $slug;
 })->name('home.user');
 
+Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
+    Route::get('create', function () {
+        return 'Blog create page';
+    })->name('create');
+    Route::get('edit', function () {
+        return 'Blog edit page';
+    })->name('edit');
+    Route::get('show', function () {
+        return 'Blog show page';
+    })->name('show');
+});
+
 
 // breeze
 Route::middleware('auth')->group(function () {
