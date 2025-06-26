@@ -54,6 +54,10 @@ Route::get('about', function () {
     return view('about.index', ['title' => $title, 'description' => $description, 'topics' => $topics]);
 });
 
+Route::get('templating', function () {
+    return view('template');
+});
+
 Route::fallback(function () {
     return 'page Not Found!';
 });
