@@ -43,6 +43,10 @@ Route::delete('delete-route', function () {
     return;
 });
 
+Route::get('contact', function() {
+    return view('contact.index');
+});
+
 Route::fallback(function () {
     return 'page Not Found!';
 });
