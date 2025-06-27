@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -65,6 +66,8 @@ Route::get('templating', function () {
 Route::fallback(function () {
     return 'page Not Found!';
 });
+
+Route::get('single-action', SingleActionController::class);
 
 // breeze
 Route::middleware('auth')->group(function () {
