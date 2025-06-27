@@ -1,15 +1,19 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/about', function () {
-    return 'This is about page';
-})->name('home.about');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('about', [HomeController::class, 'about'])->name('home.about');
+
+// Route::get('/about', function () {
+//     return 'This is about page';
+// })->name('home.about');
 
 Route::get('/user/{id}/{slug}', function ($id, $slug) {
     return 'Hello User: ' . $id . '; Slug: ' . $slug;
@@ -47,7 +51,7 @@ Route::get('contact', function () {
     return view('contact.index');
 });
 
-Route::get('about', function () {
+Route::get('about-data', function () {
     $title = 'About Page';
     $description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laudantium aspernatur repellat accusamus omnis, nihil laborum aut eius, libero dolores voluptate vero, facilis sunt tenetur';
     $topics = ['Politics', 'Sports', 'Arts', 'Science'];

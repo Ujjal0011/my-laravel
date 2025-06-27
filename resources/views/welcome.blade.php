@@ -9,8 +9,9 @@
 </head>
 
 <body>
+    <a href="{{ route('home.index') }}">Home</a>
     <a href="{{ route('home.user', ['id' => 1, 'slug' => 'abc']) }}">User</a>
-    <a href="{{ route('home.about') }}">About</a>
+    {{-- <a href="{{ route('home.about') }}">About</a> --}}
 </body>
 
 </html>
