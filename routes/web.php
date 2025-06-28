@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SingleActionController;
@@ -68,6 +69,8 @@ Route::fallback(function () {
 });
 
 Route::get('single-action', SingleActionController::class);
+
+Route::resource('/blog', BlogController::class);
 
 // breeze
 Route::middleware('auth')->group(function () {
