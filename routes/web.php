@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SingleActionController;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -70,7 +71,12 @@ Route::fallback(function () {
 
 Route::get('single-action', SingleActionController::class);
 
-Route::resource('/blog', BlogController::class);
+// Route::resource('/blog', BlogController::class);
+
+Route::get('/blog', function() {
+    $blogData = Blog::all();
+    dd($blogData);
+});
 
 // breeze
 Route::middleware('auth')->group(function () {
