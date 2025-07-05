@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('author');
+            $table->string('author')->default('Anonymous');
             $table->boolean('status');
             $table->timestamps();
         });
